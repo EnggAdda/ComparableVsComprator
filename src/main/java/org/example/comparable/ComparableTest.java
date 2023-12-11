@@ -12,9 +12,14 @@ public class ComparableTest {
         ,new Person(25,"Ajay")
         ,new Person(21,"Naman"),
                 new Person(27,"Vivek"));
-        System.out.println("List before sorting" +list);
+/*        System.out.println("List before sorting" +list);
         Collections.sort(list);
-        System.out.println("List after sorting"+list);
+        System.out.println("List after sorting"+list);*/
+
+
+        //Stream Usage
+
+        list.stream().sorted().forEach(System.out::println);
 
     }
 }

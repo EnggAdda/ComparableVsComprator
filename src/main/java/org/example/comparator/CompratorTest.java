@@ -14,9 +14,14 @@ public class CompratorTest {
                 ,new Person(25,"Ajay")
                 ,new Person(21,"Naman"),
                 new Person(27,"Vivek"));
-        System.out.println("List before sorting" +list);
+/*        System.out.println("List before sorting" +list);
         Collections.sort(list,new NameComarator());
-        System.out.println("List after sorting"+list);
+        System.out.println("List after sorting"+list);*/
+
+        //list.stream().sorted(new NameComparator()).forEach(System.out::println);
+
+        list.stream().sorted(Comparator.comparing(Person::getName)
+                .thenComparing(Person::getAge)).forEach(System.out::println);
 
 
     }
